@@ -109,7 +109,7 @@ int readDHT(int pin) {
   f /= 10.0;
   if (data[2] & 0x80)  f *= -1;
 
-  printf("%stemperature:\"%.1f\", humidity:\"%.1f\"%s\n", "{", f, h, "}" );
+  printf("%ssuccess:true, temperature:\"%.1f\", humidity:\"%.1f\"%s\n", "{", f, h, "}" );
 } else {
 	printf("%ssuccess:false, message:\"Error reading the sensor\"%s\n", "{", "}" );
 }
