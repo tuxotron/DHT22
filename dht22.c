@@ -35,14 +35,14 @@ int main(int argc, char **argv)
 		return 1;
 
 	if (argc != 2) {
-		printf("%ssuccess:false, message:\"Missing GPIO number\"%s\n", "{", "}");
+		printf("success:false, message:Missing GPIO number\n");
 		return 2;
 	}
 
 	int dhtpin = atoi(argv[1]);
 
 	if (dhtpin <= 0) {
-		printf("%ssuccess:false, message:\"GPIO number not valid\"%s\n", "{", "}" );
+		printf("success:false, message:GPIO number not valid\n" );
 		return 3;
 	}
 
@@ -109,9 +109,9 @@ int readDHT(int pin) {
   f /= 10.0;
   if (data[2] & 0x80)  f *= -1;
 
-  printf("%ssuccess:true, temperature:\"%.1f\", humidity:\"%.1f\"%s\n", "{", f, h, "}" );
+  printf("success:true, temperature:%.1f, humidity:%.1f\n",f ,h);
 } else {
-	printf("%ssuccess:false, message:\"Error reading the sensor\"%s\n", "{", "}" );
+	printf("success:false, message:Error reading the sensor\n" );
 }
 
 return 0;
